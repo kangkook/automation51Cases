@@ -76,18 +76,15 @@ WebDriver driver;
 				//*[@id="product-165"]/div[5]/ul/li[1]/a[1]
 				//*[@id="product-170"]/div[5]/ul/li/a[1]
 				
+//				9) Image should be clickable and should navigate to next page where user can add that book to his basket
 				WebElement addToBasket1 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/button"));
 				addToBasket1.click();
 				//*[@id="product-170"]/div[2]/form/button
 				
-//				9) Image should be clickable and should navigate to next page where user can add that book to his basket
-				WebElement viewBasket1 = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/a"));
-				viewBasket1.click();
+//				WebElement viewBasket1 = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/a"));
+//				viewBasket1.click();
 				
-				//*[@id="content"]/div[1]/a
-				//*[@id="product-165"]/div[5]/ul/li[1]/a[3]
-				//*[@id="product-170"]/div[2]/form/button
-				
+
 		}
 
 		@After
