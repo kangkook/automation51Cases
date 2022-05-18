@@ -47,7 +47,9 @@ public class _2HomePageWithThreeArrivalsOnly {
 		@Test
 		public void ThreeArrivals() {
 				
-				WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
+//				WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
+				WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']"));
+
 				
 				shopMenu.click();
 				
@@ -62,8 +64,7 @@ public class _2HomePageWithThreeArrivalsOnly {
 //				6) The Home page must contains only three Arrivals
 				Assert.assertEquals(3, arrivals.size());
 
-				
-							
+									
 		}
 
 		@After
