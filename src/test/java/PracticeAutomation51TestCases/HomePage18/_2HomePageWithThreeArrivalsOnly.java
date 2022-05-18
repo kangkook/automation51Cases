@@ -1,5 +1,12 @@
 package PracticeAutomation51TestCases.HomePage18;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +16,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class _2HomePageWithThreeArrivalsOnly {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+	
 		
 		/* 2. Home page with three Arrivals only
 		 * 1) Open the browser
@@ -21,25 +28,56 @@ public class _2HomePageWithThreeArrivalsOnly {
 6) The Home page must contains only three Arrivals
 		 */
 		
-		WebDriverManager.chromedriver().setup();
+		WebDriver driver;
 		
-		WebDriver driver = new ChromeDriver();
+		@Before
+			
+			
+	    public void setUp() throws InterruptedException {
+
+	        WebDriverManager.chromedriver().setup();
+	        ChromeDriver driver = new ChromeDriver();
+	        driver.manage().window().maximize();
+	        driver.get("http://practice.automationtesting.in/");
+	        
+	        // implicit wait
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    }
 		
-		driver.manage().window().maximize();
+		@Test
+		public void ThreeArrivals() {
+				
+				WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
+				
+				shopMenu.click();
+				
+				WebElement siteLogoHomeMenu = driver.findElement(By.xpath("//*[@id='content']/nav/a"));
+				siteLogoHomeMenu.click();
+				
+				
+//				5) Test whether the Home page has Three Arrivals only
+				List<WebElement> arrivals = driver.findElements(By.xpath("//*[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div"));
+
+				
+//				6) The Home page must contains only three Arrivals
+				Assert.assertEquals(3, arrivals.size());
+
+				
+							
+		}
+
+		@After
+		public void tearDown() {
+			driver.close();
+				
+		}
+
 		
-		driver.get("http://practice.automationtesting.in");
-		
-		WebElement shopMenu = driver.findElement(By.id("menu-item-40"));
-		
-		shopMenu.click();
-		
-		WebElement siteLogoHomeMenu = driver.findElement(By.id("site-logo"));
-		siteLogoHomeMenu.click();
-		
-//		5) Test whether the Home page has Three Arrivals only
-//		6) The Home page must contains only three Arrivals
+				
 		
 
-	}
+		
+
+	
 
 }

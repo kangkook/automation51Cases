@@ -45,11 +45,11 @@ public class _1HomePageWithThreeSlidersOnly {
 	@Test
 	public void ThreeSliders() {
 			
-			WebElement shopMenu = driver.findElement(By.id("menu-item-40"));
+			WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
 			
 			shopMenu.click();
 			
-			WebElement siteLogoHomeMenu = driver.findElement(By.id("site-logo"));
+			WebElement siteLogoHomeMenu = driver.findElement(By.xpath("//*[@id='content']/nav/a"));
 			siteLogoHomeMenu.click();
 			
 			//			5) Test whether the Home page has Three Sliders only
