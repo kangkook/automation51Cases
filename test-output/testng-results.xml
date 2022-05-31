@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-31T15:44:16 EDT" name="Default suite" finished-at="2022-05-31T15:46:37 EDT" duration-ms="140920">
+    <groups>
+    </groups>
+    <test started-at="2022-05-31T15:44:16 EDT" name="Default test" finished-at="2022-05-31T15:46:37 EDT" duration-ms="140920">
+      <class name="PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:44:16 EDT" name="setUp" finished-at="2022-05-31T15:44:23 EDT" duration-ms="7172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_1validUsernamePassword()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:44:23 EDT" name="_1validUsernamePassword" finished-at="2022-05-31T15:44:35 EDT" duration-ms="12437" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _1validUsernamePassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:44:35 EDT" name="tearDown" finished-at="2022-05-31T15:44:36 EDT" duration-ms="267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:44:36 EDT" name="setUp" finished-at="2022-05-31T15:44:42 EDT" duration-ms="5943" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_2incorrectUsernamePassword()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:44:42 EDT" name="_2incorrectUsernamePassword" finished-at="2022-05-31T15:44:55 EDT" duration-ms="13307" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _2incorrectUsernamePassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:44:55 EDT" name="tearDown" finished-at="2022-05-31T15:44:55 EDT" duration-ms="262" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:44:55 EDT" name="setUp" finished-at="2022-05-31T15:45:01 EDT" duration-ms="5308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_3correctUsernameEmptyPassword()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:01 EDT" name="_3correctUsernameEmptyPassword" finished-at="2022-05-31T15:45:14 EDT" duration-ms="13590" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _3correctUsernameEmptyPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:14 EDT" name="tearDown" finished-at="2022-05-31T15:45:14 EDT" duration-ms="241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:14 EDT" name="setUp" finished-at="2022-05-31T15:45:19 EDT" duration-ms="5016" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_4emptyUsernameValidPassword()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:19 EDT" name="_4emptyUsernameValidPassword" finished-at="2022-05-31T15:45:33 EDT" duration-ms="13490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _4emptyUsernameValidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:33 EDT" name="tearDown" finished-at="2022-05-31T15:45:33 EDT" duration-ms="305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:33 EDT" name="setUp" finished-at="2022-05-31T15:45:39 EDT" duration-ms="5553" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_5emptyUsernameEmptyPassword()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:39 EDT" name="_5emptyUsernameEmptyPassword" finished-at="2022-05-31T15:45:45 EDT" duration-ms="5773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _5emptyUsernameEmptyPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:45 EDT" name="tearDown" finished-at="2022-05-31T15:45:45 EDT" duration-ms="304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:45 EDT" name="setUp" finished-at="2022-05-31T15:45:51 EDT" duration-ms="6130" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_6passwordShouldBeMasked()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:51 EDT" name="_6passwordShouldBeMasked" finished-at="2022-05-31T15:45:58 EDT" duration-ms="6837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _6passwordShouldBeMasked -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:58 EDT" name="tearDown" finished-at="2022-05-31T15:45:58 EDT" duration-ms="364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:45:58 EDT" name="setUp" finished-at="2022-05-31T15:46:03 EDT" duration-ms="5272" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_7caseSensitive()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:46:03 EDT" name="_7caseSensitive" finished-at="2022-05-31T15:46:13 EDT" duration-ms="9293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _7caseSensitive -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:46:13 EDT" name="tearDown" finished-at="2022-05-31T15:46:13 EDT" duration-ms="273" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:46:13 EDT" name="setUp" finished-at="2022-05-31T15:46:18 EDT" duration-ms="5278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="_8authentication()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:46:18 EDT" name="_8authentication" finished-at="2022-05-31T15:46:36 EDT" duration-ms="18190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _8authentication -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin@272ed83b]" started-at="2022-05-31T15:46:36 EDT" name="tearDown" finished-at="2022-05-31T15:46:37 EDT" duration-ms="238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- PracticeAutomation51TestCases.MyAccountLogin8.MyAccountLogin -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

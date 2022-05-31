@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,31 +16,17 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class _8HomeArrivalsAddToBasketItems {
+public class _014HomeArrivalsAddToBasketItemsCheckOutUpdateBasket {
 
-	/*
-	 * 1) Open the browser
-2) Enter the URL ��http://practice.automationtesting.in/��
-3) Click on Shop Menu
-4) Now click on Home menu button
-5) Test whether the Home page has Three Arrivals only
-6) The Home page must contains only three Arrivals
-7) Now click the image in the Arrivals
-8) Test whether it is navigating to next page where the user can add that book into his basket.
-9) Image should be clickable and shoul navigate to next page where user can add that book to his basket
-10) Click on the Add To Basket button which adds that book to your basket
-11) User can view that Book in the Menu item with price.
-12) Now click on Item link which navigates to proceed to check out page.
-13) User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
-	 */
-	
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions act;
 	
 
-WebDriver driver;
 	
 	@BeforeClass
-		
-		
+	
+	
     public void setUp() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -51,7 +39,7 @@ WebDriver driver;
 	}
 	
 	@Test
-	public void BasketItems() {
+	public void UpdateBasket() throws InterruptedException {
 			
 			WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
 			
@@ -95,23 +83,43 @@ WebDriver driver;
 //				12) Now click on Item link which navigates to proceed to check out page.
 				WebElement checkOut1 = driver.findElement(By.xpath("//*[@id=\"wpmenucartli\"]/a/span[2]"));
 				checkOut1.click();
-														        
-								        
-								        
-//				13) User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
-				WebElement checkOut2 = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/div/a"));
-				checkOut2.click();
+				
+//				13) Click on textbox value under quantity in Check out page to add or subtract books.
+//				14) Now after the above change ‘Update Basket’ button will turn into Clickable mode.
+//				15) Now click on Update Basket to reflect those changes
+//				16) User has the feasibility to Update Basket at the time of check out.
+				
+				//add more book
+				String quantityItem = "3";
+				driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/form/table/tbody/tr[1]/td[5]/div/input")).clear();
+				driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/form/table/tbody/tr[1]/td[5]/div/input")).sendKeys(quantityItem);
+				
+				//click update basket button
+				driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/form/table/tbody/tr[2]/td/input[1]")).click();
+				
+				//Verify if price has been updated
+				String pricePerItem = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/form/table/tbody/tr[1]/td[4]/span")).getText();
+				Thread.sleep(2000);
+				
+				String totalPrice = driver.findElement(By.xpath("//td[@class='product-subtotal']/span")).getText();
+//				System.out.println(pricePerItem + "  " + totalPrice);
+				
+//				BigDecimal parsedPrice = Currency.parse(pricePerItem, Locale.US);			
+//				BigDecimal parsedTotal = Currency.parse(totalPrice, Locale.US);
 
-				//*[@id="page-34"]/div/div[1]/div/div/div/a
-        
-								        
-								        
-								        
+//				System.out.println(parsedPrice);
+//				System.out.println(parsedTotal);
+//				System.out.println("Price per item is : "+ pricePerItem  +" "+ "Total price is : " + totalPrice);
+				
+//				Assert.assertTrue(Double.valueOf(numItem) * Double.valueOf(parsedPrice.toString()) == Double.valueOf(parsedTotal.toString()));
+				
+				
 	}
-
+	
 	@AfterClass
 	public void tearDown() {
 		driver.close();
 			
 	}
 }
+				

@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,31 +16,17 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class _8HomeArrivalsAddToBasketItems {
+public class _013HomeArrivalsAddToBasketItemsCheckOutBookFinalPrice {
 
-	/*
-	 * 1) Open the browser
-2) Enter the URL ��http://practice.automationtesting.in/��
-3) Click on Shop Menu
-4) Now click on Home menu button
-5) Test whether the Home page has Three Arrivals only
-6) The Home page must contains only three Arrivals
-7) Now click the image in the Arrivals
-8) Test whether it is navigating to next page where the user can add that book into his basket.
-9) Image should be clickable and shoul navigate to next page where user can add that book to his basket
-10) Click on the Add To Basket button which adds that book to your basket
-11) User can view that Book in the Menu item with price.
-12) Now click on Item link which navigates to proceed to check out page.
-13) User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
-	 */
-	
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions act;
 	
 
-WebDriver driver;
 	
 	@BeforeClass
-		
-		
+	
+	
     public void setUp() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -51,7 +39,7 @@ WebDriver driver;
 	}
 	
 	@Test
-	public void BasketItems() {
+	public void FinalPrice() throws InterruptedException {
 			
 			WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
 			
@@ -96,22 +84,21 @@ WebDriver driver;
 				WebElement checkOut1 = driver.findElement(By.xpath("//*[@id=\"wpmenucartli\"]/a/span[2]"));
 				checkOut1.click();
 														        
-								        
-								        
-//				13) User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
-				WebElement checkOut2 = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/div/a"));
-				checkOut2.click();
+//				13) Now User can find the Total price of the book in the Check out grid.
+//				14) User has the feasibility to find the total price of the books at to find the total price of the books at the time of check out
 
-				//*[@id="page-34"]/div/div[1]/div/div/div/a
-        
+				String total = driver.findElement(By.xpath("//*[@id=\"page-34\"]/div/div[1]/div/div/table/tbody/tr[3]/th")).getText();
+				System.out.println(total);
+				String expected = "Total";
+				Assert.assertTrue(total.equals(expected));
 								        
 								        
 								        
 	}
 
-	@AfterClass
-	public void tearDown() {
-		driver.close();
-			
-	}
+		@AfterClass
+		public void tearDown() {
+			driver.close();
+				
+		}
 }

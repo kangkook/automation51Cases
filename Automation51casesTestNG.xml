@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="PracticeAutomation51TestCases.HomePage18._5HomePageArrivalsImagesReviews"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._8HomeArrivalsAddToBasketItems"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._1HomePageWithThreeSlidersOnly2"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._1HomePageWithThreeSlidersOnly"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._3HomePageImagesInArrivalsShouldNavigate"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._9HomeArrivalsAddtoBasketItemsCoupon_"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._4HomePageArrivalsImagesDescription"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._6HomePageArrivalsImagesAddToBasket"/>
+      <class name="PracticeAutomation51TestCases.HomePage18.Test1"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._7HomePageArrivalsAddToBasketWithMoreBooks_"/>
+      <class name="PracticeAutomation51TestCases.HomePage18._2HomePageWithThreeArrivalsOnly"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

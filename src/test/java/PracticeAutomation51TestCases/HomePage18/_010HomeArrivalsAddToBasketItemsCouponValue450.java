@@ -7,36 +7,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class _8HomeArrivalsAddToBasketItems {
+public class _010HomeArrivalsAddToBasketItemsCouponValue450 {
 
-	/*
-	 * 1) Open the browser
-2) Enter the URL ��http://practice.automationtesting.in/��
-3) Click on Shop Menu
-4) Now click on Home menu button
-5) Test whether the Home page has Three Arrivals only
-6) The Home page must contains only three Arrivals
-7) Now click the image in the Arrivals
-8) Test whether it is navigating to next page where the user can add that book into his basket.
-9) Image should be clickable and shoul navigate to next page where user can add that book to his basket
-10) Click on the Add To Basket button which adds that book to your basket
-11) User can view that Book in the Menu item with price.
-12) Now click on Item link which navigates to proceed to check out page.
-13) User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
-	 */
-	
-	
 
-WebDriver driver;
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions act;
 	
-	@BeforeClass
+	@Before
 		
 		
     public void setUp() throws InterruptedException {
@@ -51,7 +37,7 @@ WebDriver driver;
 	}
 	
 	@Test
-	public void BasketItems() {
+	public void BasketItemsCoupon() throws InterruptedException {
 			
 			WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
 			
@@ -104,12 +90,23 @@ WebDriver driver;
 
 				//*[@id="page-34"]/div/div[1]/div/div/div/a
         
-								        
-								        
-								        
+//				14) Enter the Coupon code as ��krishnasakinala�� to get 50rps off on the total.
+				WebElement couponClick = driver.findElement(By.xpath("//*[@id=\"page-35\"]/div/div[1]/div[2]/a"));
+				couponClick.click();
+				
+				WebElement couponBox = driver.findElement(By.xpath("//*[@id=\"coupon_code\"]"));
+				couponBox.sendKeys("krishnasakinala");
+				couponBox.submit();
+			
+
+				String msg = driver.findElement(By.xpath("//*[@class='woocommerce']/ul/li")).getText();
+				System.out.println(msg);
+				Assert.assertEquals(msg, "Coupon usage limit has been reached.");       
+				
+
 	}
 
-	@AfterClass
+	@After
 	public void tearDown() {
 		driver.close();
 			

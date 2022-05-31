@@ -3,14 +3,14 @@ package PracticeAutomation51TestCases.HomePage18;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -18,7 +18,7 @@ public class _5HomePageArrivalsImagesReviews {
 
 	/*
 	 * 1) Open the browser
-2) Enter the URL ¡°http://practice.automationtesting.in/¡±
+2) Enter the URL ï¿½ï¿½http://practice.automationtesting.in/ï¿½ï¿½
 3) Click on Shop Menu
 4) Now click on Home menu button
 5) Test whether the Home page has Three Arrivals only
@@ -32,7 +32,7 @@ public class _5HomePageArrivalsImagesReviews {
 	
 WebDriver driver;
 	
-	@Before
+	@BeforeClass
 		
 		
     public void setUp() throws InterruptedException {
@@ -47,7 +47,7 @@ WebDriver driver;
     }
 	
 	@Test
-	public void ThreeSliders() {
+	public void ImagesReviews() {
 			
 			WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
 			
@@ -93,7 +93,7 @@ WebDriver driver;
 
 		}
 
-		@After
+		@AfterClass
 		public void tearDown() {
 			driver.close();
 				

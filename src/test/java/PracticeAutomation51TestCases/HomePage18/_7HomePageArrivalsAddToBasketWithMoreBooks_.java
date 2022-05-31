@@ -3,22 +3,25 @@ package PracticeAutomation51TestCases.HomePage18;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
+import Utilities.BaseClass;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class _7HomePageArrivalsAddToBasketWithMoreBooks_ {
 
 	/*
 	 * 1) Open the browser
-2) Enter the URL ¡°http://practice.automationtesting.in/¡±
+2) Enter the URL ï¿½ï¿½http://practice.automationtesting.in/ï¿½ï¿½
 3) Click on Shop Menu
 4) Now click on Home menu button
 5) Test whether the Home page has Three Arrivals only
@@ -53,7 +56,7 @@ WebDriver driver;
     }
 	
 	@Test
-	public void ThreeSliders() {
+	public void WithMoreBooks() {
 			
 			WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
 			
@@ -95,15 +98,66 @@ WebDriver driver;
 								      //*[@id="product-170"]/div[2]/div[1]/p/span
 				
 //				12) User can add a book by clicking on Add To Basket button which adds that book in to his Basket 
-				WebElement addToBasket2 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/button"));
-				addToBasket2.click();
+//				WebElement addToBasket2 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/button"));
+//				addToBasket2.click();
 				
 				// Functional Programming in Java Script
 				//*[@id="product-170"]/div[2]/form/button
 			
 				
 //				13) Select more books than the books in stock.Ex if the stock has 20 books, try to add 21.
-				WebElement addQuantity = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/div/input"));
+//				WebElement addQuantity = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/div/input"));
+				
+				//add more books
+				
+//				String getMax = driver.findElement(By.xpath("//*[@class=\"quantity\"]/input ")).getAttribute("Max");
+//				System.out.println(getMax);
+//				int moreThanMax = Integer.valueOf(getMax)+1;
+//				
+//				driver.findElement(By.xpath("//form/div/input")).clear();
+//				driver.findElement(By.xpath("//form/div/input")).sendKeys(String.valueOf(moreThanMax));
+//				driver.findElement(By.xpath("//button[contains(text(), 'Add to basket')]")).click();
+//				
+//				//Check if there is an error message pop up (using javascript)
+//				WebElement ele = driver.findElement(By.xpath("//form/div/input"));
+//				JavascriptExecutor js = (JavascriptExecutor) driver;
+//				Boolean isValidInput = (Boolean)js.executeScript("return arguments[0].checkValidity();", ele);
+//				System.out.println(isValidInput);
+//				String validationMessage = (String)js.executeScript("return arguments[0].validationMessage;", ele);
+//				System.out.println(validationMessage);
+				
+//				Assert.assertFalse(isValidInput);
+//
+//				String alert = String.format("Value must be less than or equal to %d.", Integer.valueOf(getMax));
+//				
+//				Assert.assertTrue(validationMessage.equals(alert));
+				
+				
+				
+				
+				// enter quantity greater than what's allowed
+//		          String getMax = BaseClass.driver.findElement(By.xpath("//*[@class=\"quantity\"]/input ")).getAttribute("Max"); // help from Leng's code
+//		          int moreThanMax = Integer.valueOf(getMax)+1; // help from Leng's code
+//		          
+//		          Actions action = new Actions(BaseClass.driver);
+//		          
+//		          WebElement quantityBox = BaseClass.driver.findElement(By.xpath("//*[@class='quantity']/input"));
+//		          action.moveToElement(quantityBox).click().perform();
+//		          
+//		          action.sendKeys(Integer.toString(moreThanMax));
+//		          action.build().perform();
+//		          
+//		          JavascriptExecutor js = (JavascriptExecutor) BaseClass.driver;
+//		          String validationMessage = (String)js.executeScript("return arguments[0].validationMessage;", quantityBox);
+//		        
+//		          String expectedValue = "Value must be less than or equal to " + getMax + ".";
+//		          String actualValue = validationMessage;
+//		          
+//		          Assert.assertEquals(actualValue, expectedValue);
+//				
+				
+				
+				
 //				WebElement maxPlusOne = driver.findElement(By.max();
 //				How can I find max + 1 ???
 //				addQuantity.sendKeys(maxPlusOne());
@@ -113,8 +167,8 @@ WebDriver driver;
 //				<input type="number" step="1" min="1" max="7839" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
 				
 //				14) Click the add to basket button
-				WebElement addToBasket3 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/button"));
-				addToBasket3.click();
+//				WebElement addToBasket3 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/button"));
+//				addToBasket3.click();
 				
 //				15) Now it throws an error prompt like you must enter a value between 1 and 20
 				

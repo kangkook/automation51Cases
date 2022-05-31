@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,27 +16,17 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class _4HomePageArrivalsImagesDescription {
+public class _015HomeArrivalsAddToBasketItemsCheckOutTotalSubtotalCondition {
 
-	/*
-	 * 1) Open the browser
-2) Enter the URL ��http://practice.automationtesting.in/��
-3) Click on Shop Menu
-4) Now click on Home menu button
-5) Test whether the Home page has Three Arrivals only
-6) The Home page must contains only three Arrivals
-7) Now click the image in the Arrivals
-8) Test whether it is navigating to next page where the user can add that book into his basket.
-9) Image should be clickable and shoul navigate to next page where user can add that book to his basket
+	WebDriver driver;
+	WebDriverWait wait;
+	Actions act;
+	
 
-	 */
-	
-	
-WebDriver driver;
 	
 	@BeforeClass
-		
-		
+	
+	
     public void setUp() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -44,10 +36,10 @@ WebDriver driver;
         
         // implicit wait
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
+	}
 	
 	@Test
-	public void ImagesDescription() {
+	public void SubtotalCondition() throws InterruptedException {
 			
 			WebElement shopMenu = driver.findElement(By.xpath("//*[@id='menu-item-40']/a"));
 			
@@ -58,7 +50,6 @@ WebDriver driver;
 				
 //				5) Test whether the Home page has Three Arrivals only
 				List<WebElement> arrivals = driver.findElements(By.xpath("//*[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div"));
-				//*[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div
 				
 //				6) The Home page must contains only three Arrivals
 				Assert.assertEquals(3, arrivals.size());
@@ -67,56 +58,49 @@ WebDriver driver;
 				
 				WebElement arrival3 = driver.findElement(By.xpath("//*[@id=\"themify_builder_content-22\"]/div[2]/div/div/div/div/div[2]/div[3]"));
 				arrival3.click();
-				//*[@id="themify_builder_content-22"]/div[2]/div/div/div/div/div[2]/div[1]
-				//*[@id="themify_builder_content-22"]/div[2]/div/div/div/div/div[2]/div[3]
 
 //				8) Test whether it is navigating to next page where the user can add that book into his basket.
 				WebElement clickBook1 = driver.findElement(By.xpath("//*[@id=\"product-165\"]/div[5]/ul/li[1]/a[1]"));
 				clickBook1.click();
 				
-				//*[@id="product-165"]/div[5]/ul/li[1]/a[1]
-				//*[@id="product-170"]/div[5]/ul/li/a[1]
+
 				
 //				9) Image should be clickable and should navigate to next page where user can add that book to his basket
+//				WebElement addToBasket1 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/button"));
+//				addToBasket1.click();
+
+				
+//				10) Click on the Add To Basket button which adds that book to your basket
 				WebElement addToBasket1 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/form/button"));
 				addToBasket1.click();
-				//*[@id="product-170"]/div[2]/form/button
 				
-//				WebElement viewBasket1 = driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/a"));
-//				viewBasket1.click();
+//				11) User can view that Book in the Menu item with price.
 				
-//				10) Click on Description tab for the book you clicked on.
-				WebElement description1 = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[3]/ul/li[1]"));
-				description1.click();
+				Boolean priceText = driver.findElement(By.xpath("//*[@id=\"product-170\"]/div[2]/div[1]/p/span")).isDisplayed();
+								        Assert.assertTrue(priceText);
+								      //*[@id="product-170"]/div[2]/div[1]/p/span
+								        
+//				12) Now click on Item link which navigates to proceed to check out page.
+				WebElement checkOut1 = driver.findElement(By.xpath("//*[@id=\"wpmenucartli\"]/a/span[2]"));
+				checkOut1.click();
 				
-				//*[@id="product-170"]/div[3]/ul/li[1]
+//				13) Now user can find total and subtotal values just above the Proceed to Checkout button.
+//				14) The total always < subtotal because taxes are added in the subtotal
+//				15) Total
+			
+				String total = driver.findElement(By.xpath("//tr[@class='order-total']")).getText().substring(7);
+				String subTotal = driver.findElement(By.xpath("//tr[@class='cart-subtotal']")).getText().substring(10);
 				
-//				11) There should be a description regarding that book the user clicked on
+				System.out.println(total);
+				System.out.println(subTotal);
 				
-		        Boolean descriptionText = driver.findElement(By.id("tab-description")).isDisplayed();
-
-		        Assert.assertTrue(descriptionText);
-		        
+				Assert.assertTrue(Double.valueOf(total) > Double.valueOf(subTotal));
 				
-//		        String actualDescriptionText = driver.findElement(By.id("tab-description")).getText();
-
-//		        System.out.println(actualDescriptionText);
-		        
-//		        String expectedDescriptionText = "Product Description";
-////
-//		        Assert.assertEquals(expectedDescriptionText, actualDescriptionText);
-				
-		      //*[@id="tab-description"]
-				//*[@id="tab-description"]
-		      //*[@id="tab-description"]/h2
-				
-
-		}
-
-		@AfterClass
-		public void tearDown() {
-			driver.close();
-				
-		}
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		driver.close();
+			
+	}
 }
-
